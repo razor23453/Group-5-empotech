@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal portfolio showcasing my skills, projects, and contact information.">
-    <title>Group 5 - EmpoTech</title>
+    <meta name="description" content="Business portfolio showcasing services, and contact information.">
+    <title>Group 2 Busisness</title>
     <style>
         /* General Reset */
         * {
@@ -20,47 +20,20 @@
             line-height: 1.6;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
-            z-index: 100;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin: 0 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 500;
-        }
-
-        nav ul li a:hover {
-            color: #ff6347;
+        /* Container */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 1200px;
         }
 
         /* Header Section */
         header {
             background: linear-gradient(135deg, #00bfae, #004c58);
             color: white;
+            padding: 80px 0;
             text-align: center;
-            padding: 120px 0;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
@@ -70,146 +43,91 @@
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 300;
         }
 
-        /* About Me Section */
+        /* About Us Section */
         #about {
-            padding: 80px 20px;
+            background: #ffffff;
+            padding: 80px 0;
             text-align: center;
-            background-color: #ffffff;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            opacity: 0;
             transform: translateY(30px);
+            opacity: 0;
             animation: fadeIn 1s forwards 0.2s;
         }
 
         #about h2 {
             font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #333;
+            margin-bottom: 30px;
+            color: #004c58;
         }
 
         #about p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             max-width: 800px;
             margin: 0 auto;
             line-height: 1.8;
         }
 
-        /* Skills Section */
-        #skills {
-            padding: 100px 20px;
-            background-color: #f9f9f9;
+        /* Services Section */
+        #services {
+            padding: 80px 0;
+            background-color: #f0f4f8;
             text-align: center;
         }
 
-        #skills h2 {
+        #services h2 {
             font-size: 2.5rem;
+            color: #004c58;
             margin-bottom: 50px;
-            color: #333;
         }
 
-        #skills ul {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+        #services ul {
             list-style: none;
             padding: 0;
-        }
-
-        #skills li {
-            background-color: #fff;
-            margin: 20px;
-            padding: 30px;
-            width: 220px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        #skills li:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        #skills li h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #ff6347;
-        }
-
-        /* Projects Section */
-        #projects {
-            padding: 100px 20px;
-            background-color: #ffffff;
-            text-align: center;
-        }
-
-        #projects h2 {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: #333;
-        }
-
-        #projects .projects-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
-            padding: 0 20px;
         }
 
-        .project-card {
+        #services li {
             background-color: #fff;
-            padding: 30px;
             margin: 20px;
-            width: 280px;
+            padding: 30px;
+            width: 250px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .project-card:hover {
+        #services li:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .project-card img {
-            width: 100%;
-            border-radius: 8px;
+        #services li strong {
+            display: block;
+            font-size: 1.3rem;
             margin-bottom: 15px;
-        }
-
-        .project-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .project-card p {
-            font-size: 1rem;
-            margin-bottom: 20px;
-            color: #666;
-        }
-
-        .project-card a {
             color: #00bfae;
-            text-decoration: none;
-            font-weight: bold;
         }
 
         /* Contact Section */
         #contact {
-            padding: 100px 20px;
-            background-color: #f9f9f9;
+            background-color: #ffffff;
+            padding: 80px 0;
             text-align: center;
+            transform: translateY(30px);
+            opacity: 0;
+            animation: fadeIn 1s forwards 0.4s;
         }
 
         #contact h2 {
             font-size: 2.5rem;
             margin-bottom: 30px;
-            color: #333;
+            color: #004c58;
         }
 
         #contact form {
@@ -221,21 +139,21 @@
             width: 100%;
             padding: 15px;
             margin-bottom: 20px;
-            border: 1px solid #ddd;
-            font-size: 1rem;
+            border: 2px solid #ddd;
             border-radius: 5px;
+            font-size: 1rem;
             transition: border-color 0.3s ease;
         }
 
         #contact input:focus, #contact textarea:focus {
-            border-color: #ff6347;
+            border-color: #00bfae;
             outline: none;
         }
 
         #contact button {
             width: 100%;
             padding: 15px;
-            background-color: #ff6347;
+            background-color: #00bfae;
             color: white;
             border: none;
             font-size: 1.2rem;
@@ -245,15 +163,16 @@
         }
 
         #contact button:hover {
-            background-color: #d53f3f;
+            background-color: #004c58;
         }
 
         /* Footer Section */
         footer {
-            background-color: #333;
+            background-color: #004c58;
             color: white;
             text-align: center;
-            padding: 20px 0;
+            padding: 30px 0;
+            box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
         }
 
         footer p {
@@ -270,14 +189,14 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            #skills ul {
+            #services ul {
                 flex-direction: column;
                 align-items: center;
             }
 
-            #projects .projects-container {
-                flex-direction: column;
-                align-items: center;
+            #services li {
+                width: 80%;
+                margin: 20px 0;
             }
 
             header h1 {
@@ -287,100 +206,62 @@
             header p {
                 font-size: 1rem;
             }
-
-            #contact form {
-                width: 90%;
-            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
     <!-- Header Section -->
     <header>
-        <h1>Group 5</h1>
-        <p>Full-Stack Developer | Designer | Problem Solver</p>
+        <div class="container">
+            <h1>Your Business Name</h1>
+            <p>Empowering Your Business with Innovative Solutions</p>
+        </div>
     </header>
 
-    <!-- About Me Section -->
+    <!-- About Us Section -->
     <section id="about">
         <div class="container">
-            <h2>About Me</h2>
-            <p>Hello! I'm Adrian Solana the leader of the group 5, a passionate developer with a love for building amazing websites and applications. I specialize in full-stack development, and I'm always looking to improve my skills and tackle new challenges. I believe in the power of technology to transform businesses and lives.</p>
+            <h2>About Us</h2>
+            <p>We are the group 2 a leading company specializing in providing top-notch business solutions. Our mission is to help businesses grow by offering innovative strategies and practical solutions tailored to meet each client's unique needs. With years of expertise in the industry, we provide personalized services to ensure success.</p>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
+    <!-- Services Section -->
+    <section id="services">
         <div class="container">
-            <h2>Skills</h2>
+            <h2>Our Services</h2>
             <ul>
                 <li>
-                    <h3>Matog</h3>
-                    Dali kaajo matog.
+                    <strong>Business Consulting</strong>
+                    Tailored strategies to help your business thrive.
                 </li>
                 <li>
-                    <h3>Payter mo duwa</h3>
-                   games we play: Mlbb, dota.
+                    <strong>Web Design & Development</strong>
+                    Modern, responsive websites for your brand.
                 </li>
                 <li>
-                    <h3>React</h3>
-                    kusog mo react if masakpan mag duwa sa computer lab.
+                    <strong>SEO Optimization</strong>
+                    Improve your search engine rankings and visibility.
                 </li>
                 <li>
-                    <h3>gamay og grado</h3>
-                    dili kaajo academic achiever.
+                    <strong>Brand Strategy</strong>
+                    Build a strong, memorable brand presence.
                 </li>
                 <li>
-                    <h3>ambot</h3>
-                    wa nakoy ideas so ambot, hi cher reah :}.
+                    <strong>Digital Marketing</strong>
+                    Boost your online presence and grow your audience.
                 </li>
             </ul>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2>My Projects</h2>
-            <div class="projects-container">
-                <div class="project-card">
-                    <img src="project1.jpg" alt="Project 1">
-                    <h3>Project 1</h3>
-                    <p>This is a project that showcases my skills in front-end and back-end development.</p>
-                    <a href="#">View Project</a>
-                </div>
-                <div class="project-card">
-                    <img src="project2.jpg" alt="Project 2">
-                    <h3>Project 2</h3>
-                    <p>This is another project where I built a full-stack application with React and Node.js.</p>
-                    <a href="#">View Project</a>
-                </div>
-                <div class="project-card">
-                    <img src="project3.jpg" alt="Project 3">
-                    <h3>Project 3</h3>
-                    <p>Here, I developed a data-driven web application using JavaScript and MongoDB.</p>
-                    <a href="#">View Project</a>
-                </div>
-            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2>Contact Me</h2>
-            <form action="mailto:pugdabber23email@gmail.com" method="post" enctype="text/plain">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you! Whether you're interested in our services or have any questions, feel free to reach out.</p>
+            <form action="mailto:your-business-email@example.com" method="post" enctype="text/plain">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <textarea name="message" placeholder="Your Message" required></textarea>
@@ -389,9 +270,11 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer>
-        <p>&copy; Adrian 2024 | All rights reserved.</p>
+        <div class="container">
+            <p>&copy; Group 2 | All rights reserved.</p>
+        </div>
     </footer>
 
 </body>
