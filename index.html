@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Name - A Taste of Excellence</title>
+    <title>Restaurant Delight</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        /* Global Reset */
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -13,54 +14,56 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
+            color: #333;
+            background-color: #fafafa;
         }
 
-        /* Header & Navbar */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header Section */
         header {
             background-color: #222;
-            color: white;
             padding: 20px 0;
+            color: white;
         }
 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        .logo {
+        .navbar .logo {
             font-size: 28px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #ff6f61;
         }
 
         .navbar ul {
             list-style: none;
             display: flex;
+            gap: 30px;
         }
 
-        .navbar li {
-            margin: 0 20px;
-        }
-
-        .navbar a {
+        .navbar li a {
+            font-size: 16px;
             color: white;
-            text-decoration: none;
-            font-size: 18px;
             text-transform: uppercase;
+            font-weight: 600;
             letter-spacing: 1px;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
         }
 
-        .navbar a:hover {
+        .navbar li a:hover {
             color: #ff6f61;
         }
 
@@ -68,114 +71,85 @@
         .hero {
             position: relative;
             background: url('restaurant-hero.jpg') no-repeat center center/cover;
-            height: 600px;
-            color: white;
+            height: 90vh;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 40px;
+            color: white;
         }
 
         .hero::after {
-            content: "";
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.4);
         }
 
         .hero h1 {
-            font-size: 60px;
-            font-weight: 700;
             z-index: 1;
-            letter-spacing: 2px;
+            font-size: 50px;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
 
         .hero p {
-            font-size: 24px;
-            margin-top: 10px;
             z-index: 1;
+            font-size: 22px;
+            margin-bottom: 30px;
         }
 
-        .hero .cta-button {
-            margin-top: 30px;
-            padding: 15px 40px;
+        .hero .cta-btn {
+            padding: 15px 30px;
             background-color: #ff6f61;
             color: white;
-            font-size: 20px;
-            font-weight: 600;
             border: none;
-            border-radius: 50px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
             cursor: pointer;
             transition: all 0.3s ease;
-            text-transform: uppercase;
             z-index: 1;
         }
 
-        .hero .cta-button:hover {
+        .hero .cta-btn:hover {
             background-color: #e45b4d;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-            transform: translateY(-5px);
-        }
-
-        /* Section Title */
-        .section-title {
-            text-align: center;
-            margin: 60px 0;
-        }
-
-        .section-title h2 {
-            font-size: 36px;
-            color: #222;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        /* About Section */
-        .about {
-            background-color: #fff;
-            padding: 80px 40px;
-            text-align: center;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .about p {
-            font-size: 18px;
-            color: #555;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 30px auto;
-            font-weight: 300;
+            transform: scale(1.05);
         }
 
         /* Menu Section */
         .menu {
-            background-color: #f9f9f9;
-            padding: 80px 40px;
+            background-color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .menu h2 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: #333;
         }
 
         .menu-items {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
-            justify-items: center;
-            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .menu-item {
-            background-color: #fff;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
-            overflow: hidden;
-            width: 100%;
-            max-width: 320px;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .menu-item:hover {
@@ -185,35 +159,67 @@
 
         .menu-item img {
             width: 100%;
-            height: 220px;
+            height: 200px;
             object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
         }
 
         .menu-item h3 {
             font-size: 24px;
-            color: #333;
+            color: #222;
             font-weight: 600;
+            margin-bottom: 10px;
         }
 
         .menu-item p {
             font-size: 16px;
-            color: #777;
-            margin-top: 10px;
-            line-height: 1.5;
+            color: #666;
+            margin-bottom: 15px;
         }
 
         .menu-item .price {
-            font-size: 20px;
+            font-size: 18px;
             color: #ff6f61;
-            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about {
+            background-color: #fffbf0;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 36px;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .about p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
         }
 
         /* Gallery Section */
         .gallery {
             background-color: #fff;
-            padding: 80px 40px;
+            padding: 80px 20px;
+        }
+
+        .gallery h2 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: #333;
         }
 
         .gallery-images {
@@ -221,26 +227,35 @@
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
             justify-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .gallery-images img {
             width: 100%;
             height: 250px;
             object-fit: cover;
-            border-radius: 15px;
-            transition: transform 0.3s ease;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .gallery-images img:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         /* Contact Section */
         .contact {
             background-color: #f9f9f9;
-            padding: 80px 40px;
+            padding: 80px 20px;
+        }
+
+        .contact h2 {
+            font-size: 36px;
+            font-weight: 600;
             text-align: center;
+            margin-bottom: 30px;
+            color: #333;
         }
 
         .contact form {
@@ -254,28 +269,26 @@
         .contact textarea {
             padding: 15px;
             margin-bottom: 20px;
-            border: 1px solid #ddd;
             border-radius: 5px;
+            border: 1px solid #ddd;
             font-size: 16px;
-            background-color: #fff;
         }
 
         .contact button {
-            padding: 15px 30px;
+            padding: 15px;
             background-color: #ff6f61;
             color: white;
             font-size: 18px;
             font-weight: 600;
             border: none;
-            border-radius: 50px;
+            border-radius: 25px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .contact button:hover {
             background-color: #e45b4d;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-            transform: translateY(-5px);
+            transform: scale(1.05);
         }
 
         /* Footer Section */
@@ -284,19 +297,26 @@
             color: white;
             padding: 40px 20px;
             text-align: center;
-            font-size: 16px;
+        }
+
+        footer .social-media {
+            margin-bottom: 20px;
         }
 
         footer .social-media a {
-            margin: 0 20px;
+            margin: 0 15px;
             color: white;
             font-size: 22px;
-            text-decoration: none;
             transition: color 0.3s ease;
         }
 
         footer .social-media a:hover {
             color: #ff6f61;
+        }
+
+        footer p {
+            font-size: 16px;
+            margin-top: 20px;
         }
 
     </style>
@@ -306,12 +326,12 @@
     <!-- Header Section -->
     <header>
         <div class="navbar">
-            <div class="logo">Restaurant Name</div>
+            <div class="logo">Restaurant Delight</div>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
                     <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About Us</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -321,65 +341,57 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Welcome to Restaurant Name</h1>
-            <p>Experience the finest cuisine</p>
-            <button class="cta-button">Reserve a Table</button>
+        <div>
+            <h1>Welcome to Restaurant Delight</h1>
+            <p>A dining experience like no other.</p>
+            <button class="cta-btn">Reserve Your Table</button>
         </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about" class="about">
-        <div class="section-title">
-            <h2>About Us</h2>
-        </div>
-        <p>At Restaurant Name, we believe in serving high-quality food that brings people together. Every dish is crafted with care using the freshest ingredients. Whether you're here for a romantic dinner or a celebration, we promise an unforgettable dining experience.</p>
     </section>
 
     <!-- Menu Section -->
     <section id="menu" class="menu">
-        <div class="section-title">
-            <h2>Our Menu</h2>
-        </div>
+        <h2>Our Menu</h2>
         <div class="menu-items">
             <div class="menu-item">
-                <img src="dish1.jpg" alt="Dish 1">
-                <h3>Dish 1</h3>
-                <p>Delicious description of dish 1</p>
+                <img src="resto.jpg" alt="Dish 1">
+                <h3>Delicious Dish 1</h3>
+                <p>A delicious description of this dish</p>
                 <p class="price">$12.99</p>
             </div>
             <div class="menu-item">
                 <img src="dish2.jpg" alt="Dish 2">
-                <h3>Dish 2</h3>
-                <p>Delicious description of dish 2</p>
+                <h3>Delicious Dish 2</h3>
+                <p>A delicious description of this dish</p>
                 <p class="price">$15.99</p>
             </div>
             <div class="menu-item">
                 <img src="dish3.jpg" alt="Dish 3">
-                <h3>Dish 3</h3>
-                <p>Delicious description of dish 3</p>
+                <h3>Delicious Dish 3</h3>
+                <p>A delicious description of this dish</p>
                 <p class="price">$18.99</p>
             </div>
         </div>
     </section>
 
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>At Restaurant Delight, we offer a one-of-a-kind dining experience. Whether you're here for a family dinner or a romantic evening, our dishes are made with the freshest ingredients, and our service is top-notch.</p>
+    </section>
+
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
-        <div class="section-title">
-            <h2>Gallery</h2>
-        </div>
-        <div class="gallery-images">
-            <img src="dish1.jpg" alt="Dish 1">
-            <img src="dish2.jpg" alt="Dish 2">
-            <img src="dish3.jpg" alt="Dish 3">
-        </div>
+        <h2>Gallery</h2>
+       <div class="gallery-images">
+    <img src="images/dish1.jpg" alt="Dish 1">
+    <img src="images/dish2.jpg" alt="Dish 2">
+    <img src="images/dish3.jpg" alt="Dish 3">
+</div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <div class="section-title">
-            <h2>Contact Us</h2>
-        </div>
+        <h2>Contact Us</h2>
         <form action="#" method="post">
             <input type="text" placeholder="Name" name="name" required>
             <input type="email" placeholder="Email" name="email" required>
@@ -395,9 +407,8 @@
             <a href="#">Instagram</a>
             <a href="#">Twitter</a>
         </div>
-        <p>&copy; 2024 Restaurant Name. All Rights Reserved.</p>
+        <p>&copy; 2024 Restaurant Delight. All Rights Reserved.</p>
     </footer>
 
 </body>
 </html>
-
