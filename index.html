@@ -3,279 +3,401 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Business portfolio showcasing services, and contact information.">
-    <title>Group 2 Busisness</title>
+    <title>Restaurant Name - A Taste of Excellence</title>
     <style>
-        /* General Reset */
+        /* Global Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
         }
 
         body {
-            background-color: #f4f4f9;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
-        /* Container */
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            max-width: 1200px;
-        }
-
-        /* Header Section */
+        /* Header & Navbar */
         header {
-            background: linear-gradient(135deg, #00bfae, #004c58);
+            background-color: #222;
             color: white;
-            padding: 80px 0;
-            text-align: center;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
         }
 
-        header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .logo {
+            font-size: 28px;
             font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        header p {
-            font-size: 1.3rem;
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar li {
+            margin: 0 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ff6f61;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: url('restaurant-hero.jpg') no-repeat center center/cover;
+            height: 600px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 40px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            font-weight: 700;
+            z-index: 1;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-top: 10px;
+            z-index: 1;
+        }
+
+        .hero .cta-button {
+            margin-top: 30px;
+            padding: 15px 40px;
+            background-color: #ff6f61;
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            z-index: 1;
+        }
+
+        .hero .cta-button:hover {
+            background-color: #e45b4d;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #222;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* About Section */
+        .about {
+            background-color: #fff;
+            padding: 80px 40px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .about p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 30px auto;
             font-weight: 300;
         }
 
-        /* About Us Section */
-        #about {
-            background: #ffffff;
-            padding: 80px 0;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transform: translateY(30px);
-            opacity: 0;
-            animation: fadeIn 1s forwards 0.2s;
+        /* Menu Section */
+        .menu {
+            background-color: #f9f9f9;
+            padding: 80px 40px;
         }
 
-        #about h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            color: #004c58;
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            justify-items: center;
+            align-items: center;
         }
 
-        #about p {
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        /* Services Section */
-        #services {
-            padding: 80px 0;
-            background-color: #f0f4f8;
-            text-align: center;
-        }
-
-        #services h2 {
-            font-size: 2.5rem;
-            color: #004c58;
-            margin-bottom: 50px;
-        }
-
-        #services ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        #services li {
+        .menu-item {
             background-color: #fff;
-            margin: 20px;
-            padding: 30px;
-            width: 250px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            overflow: hidden;
+            width: 100%;
+            max-width: 320px;
+            transition: all 0.3s ease;
         }
 
-        #services li:hover {
+        .menu-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
         }
 
-        #services li strong {
-            display: block;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: #00bfae;
+        .menu-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .menu-item h3 {
+            font-size: 24px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .menu-item p {
+            font-size: 16px;
+            color: #777;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+
+        .menu-item .price {
+            font-size: 20px;
+            color: #ff6f61;
+            margin-top: 15px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background-color: #fff;
+            padding: 80px 40px;
+        }
+
+        .gallery-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+
+        .gallery-images img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-images img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         /* Contact Section */
-        #contact {
-            background-color: #ffffff;
-            padding: 80px 0;
+        .contact {
+            background-color: #f9f9f9;
+            padding: 80px 40px;
             text-align: center;
-            transform: translateY(30px);
-            opacity: 0;
-            animation: fadeIn 1s forwards 0.4s;
         }
 
-        #contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            color: #004c58;
-        }
-
-        #contact form {
+        .contact form {
+            display: flex;
+            flex-direction: column;
             max-width: 600px;
             margin: 0 auto;
         }
 
-        #contact input, #contact textarea {
-            width: 100%;
+        .contact input,
+        .contact textarea {
             padding: 15px;
             margin-bottom: 20px;
-            border: 2px solid #ddd;
+            border: 1px solid #ddd;
             border-radius: 5px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
+            font-size: 16px;
+            background-color: #fff;
         }
 
-        #contact input:focus, #contact textarea:focus {
-            border-color: #00bfae;
-            outline: none;
-        }
-
-        #contact button {
-            width: 100%;
-            padding: 15px;
-            background-color: #00bfae;
+        .contact button {
+            padding: 15px 30px;
+            background-color: #ff6f61;
             color: white;
+            font-size: 18px;
+            font-weight: 600;
             border: none;
-            font-size: 1.2rem;
+            border-radius: 50px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-            border-radius: 5px;
+            transition: all 0.3s ease;
         }
 
-        #contact button:hover {
-            background-color: #004c58;
+        .contact button:hover {
+            background-color: #e45b4d;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
         }
 
         /* Footer Section */
         footer {
-            background-color: #004c58;
+            background-color: #222;
             color: white;
+            padding: 40px 20px;
             text-align: center;
-            padding: 30px 0;
-            box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
         }
 
-        footer p {
-            font-size: 1rem;
+        footer .social-media a {
+            margin: 0 20px;
+            color: white;
+            font-size: 22px;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+        footer .social-media a:hover {
+            color: #ff6f61;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            #services ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            #services li {
-                width: 80%;
-                margin: 20px 0;
-            }
-
-            header h1 {
-                font-size: 2.5rem;
-            }
-
-            header p {
-                font-size: 1rem;
-            }
-        }
     </style>
 </head>
 <body>
 
     <!-- Header Section -->
     <header>
-        <div class="container">
-            <h1>Your Business Name</h1>
-            <p>Empowering Your Business with Innovative Solutions</p>
+        <div class="navbar">
+            <div class="logo">Restaurant Name</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- About Us Section -->
-    <section id="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>We are the group 2 a leading company specializing in providing top-notch business solutions. Our mission is to help businesses grow by offering innovative strategies and practical solutions tailored to meet each client's unique needs. With years of expertise in the industry, we provide personalized services to ensure success.</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Restaurant Name</h1>
+            <p>Experience the finest cuisine</p>
+            <button class="cta-button">Reserve a Table</button>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <ul>
-                <li>
-                    <strong>Business Consulting</strong>
-                    Tailored strategies to help your business thrive.
-                </li>
-                <li>
-                    <strong>Web Design & Development</strong>
-                    Modern, responsive websites for your brand.
-                </li>
-                <li>
-                    <strong>SEO Optimization</strong>
-                    Improve your search engine rankings and visibility.
-                </li>
-                <li>
-                    <strong>Brand Strategy</strong>
-                    Build a strong, memorable brand presence.
-                </li>
-                <li>
-                    <strong>Digital Marketing</strong>
-                    Boost your online presence and grow your audience.
-                </li>
-            </ul>
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="section-title">
+            <h2>About Us</h2>
+        </div>
+        <p>At Restaurant Name, we believe in serving high-quality food that brings people together. Every dish is crafted with care using the freshest ingredients. Whether you're here for a romantic dinner or a celebration, we promise an unforgettable dining experience.</p>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="section-title">
+            <h2>Our Menu</h2>
+        </div>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="dish1.jpg" alt="Dish 1">
+                <h3>Dish 1</h3>
+                <p>Delicious description of dish 1</p>
+                <p class="price">$12.99</p>
+            </div>
+            <div class="menu-item">
+                <img src="dish2.jpg" alt="Dish 2">
+                <h3>Dish 2</h3>
+                <p>Delicious description of dish 2</p>
+                <p class="price">$15.99</p>
+            </div>
+            <div class="menu-item">
+                <img src="dish3.jpg" alt="Dish 3">
+                <h3>Dish 3</h3>
+                <p>Delicious description of dish 3</p>
+                <p class="price">$18.99</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="section-title">
+            <h2>Gallery</h2>
+        </div>
+        <div class="gallery-images">
+            <img src="dish1.jpg" alt="Dish 1">
+            <img src="dish2.jpg" alt="Dish 2">
+            <img src="dish3.jpg" alt="Dish 3">
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
+    <section id="contact" class="contact">
+        <div class="section-title">
             <h2>Contact Us</h2>
-            <p>We'd love to hear from you! Whether you're interested in our services or have any questions, feel free to reach out.</p>
-            <form action="mailto:your-business-email@example.com" method="post" enctype="text/plain">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
         </div>
+        <form action="#" method="post">
+            <input type="text" placeholder="Name" name="name" required>
+            <input type="email" placeholder="Email" name="email" required>
+            <textarea placeholder="Message" name="message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
     </section>
 
     <!-- Footer Section -->
     <footer>
-        <div class="container">
-            <p>&copy; Group 2 | All rights reserved.</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
         </div>
+        <p>&copy; 2024 Restaurant Name. All Rights Reserved.</p>
     </footer>
 
 </body>
 </html>
+
